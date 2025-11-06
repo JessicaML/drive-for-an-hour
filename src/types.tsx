@@ -36,3 +36,14 @@ export interface ForecastItem {
 export interface ForecastData {
   list: ForecastItem[];
 }
+
+export interface WarmDestination {
+  lat: number;
+  long: number;
+  temperature: number;
+  temperatureIncrease: number;
+  drivingTimeMinutes: number;
+  drivingDistanceMiles: number;
+  weatherDescription: string;
+  weatherMain: string;
+}
