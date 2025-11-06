@@ -1,0 +1,298 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.App {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  max-width: 600px;
+  margin: 2rem;
+  padding: 2.5rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 30px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3),
+              0 0 100px rgba(255, 255, 255, 0.1) inset;
+  backdrop-filter: blur(10px);
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+
+.App:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+}
+
+.App h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  background: linear-gradient(45deg, #667eea, #764ba2, #f093fb);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+@keyframes titlePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* Location Card */
+.location-card {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  padding: 1.5rem;
+  border-radius: 20px;
+  margin: 1.5rem 0;
+  box-shadow: 0 10px 30px rgba(245, 87, 108, 0.4);
+}
+
+.location-card:hover {
+  box-shadow: 0 15px 40px rgba(245, 87, 108, 0.6);
+}
+
+.location-card p {
+  display: inline-block;
+  margin: 0.5rem 1rem;
+  padding: 0.8rem 1.5rem;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 25px;
+  font-size: 1.1rem;
+  color: white;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Map Container */
+.map-container {
+  height: 400px;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 1.5rem 0;
+  box-shadow: 0 10px 30px rgba(79, 172, 254, 0.4);
+  border: 3px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(135deg, #4facfe 0%, #00f2fe 100%) border-box;
+  transition: all 0.3s ease;
+  filter: grayscale(100%);
+  position: relative;
+}
+
+.map-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 40px rgba(79, 172, 254, 0.6);
+  filter: grayscale(100%) brightness(1.05);
+}
+
+/* Rain Overlay */
+.rain-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1000;
+  border-radius: 20px;
+}
+
+.rain-warning {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  animation: rainWarningPulse 2s ease-in-out infinite;
+  z-index: 1001;
+}
+
+@keyframes rainWarningPulse {
+  0%, 100% {
+    transform: translateX(-50%) scale(1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    transform: translateX(-50%) scale(1.05);
+    box-shadow: 0 8px 30px rgba(102, 126, 234, 0.6);
+  }
+}
+
+.rain-icon {
+  font-size: 1.5rem;
+  animation: rainIconBounce 1s ease-in-out infinite;
+}
+
+@keyframes rainIconBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.rain-text {
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Rain Drops Animation */
+.rain-drops {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.rain-drop {
+  position: absolute;
+  top: -10px;
+  width: 2px;
+  height: 20px;
+  background: linear-gradient(to bottom, rgba(79, 172, 254, 0), rgba(79, 172, 254, 0.8));
+  animation: rainFall linear infinite;
+}
+
+@keyframes rainFall {
+  0% {
+    top: -20px;
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0.3;
+  }
+}
+
+/* Weather Card */
+.weather-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 2rem;
+  border-radius: 20px;
+  margin: 1.5rem 0;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+}
+
+.weather-card:hover {
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+}
+
+/* Loading message */
+.App > p {
+  color: #667eea;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 2rem 0;
+}
+
+@keyframes loadingPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Weather card text styles */
+.weather-description {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  color: white;
+  font-weight: 600;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.temperature {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+  margin: 1.5rem 0;
+}
+
+.sun-time {
+  display: inline-block;
+  margin: 0.5rem 1rem;
+  padding: 0.8rem 1.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  font-size: 1.1rem;
+  color: white;
+  font-weight: 600;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.sun-time:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .App {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .App h1 {
+    font-size: 2rem;
+  }
+
+  .temperature {
+    font-size: 2rem;
+  }
+
+  .location-card p,
+  .sun-time {
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .weather-description {
+    font-size: 1.2rem;
+  }
+
+  .map-container {
+    height: 300px;
+  }
+
+  .rain-warning {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .rain-icon {
+    font-size: 1.2rem;
+  }
+
+  .rain-text {
+    font-size: 0.9rem;
+  }
+}
