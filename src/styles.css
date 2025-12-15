@@ -231,7 +231,7 @@ body {
 }
 
 .temperature {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 900;
   color: #fff;
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
@@ -394,7 +394,7 @@ body {
   }
 
   .temperature {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .location-card p,

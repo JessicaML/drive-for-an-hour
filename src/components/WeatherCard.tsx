@@ -9,7 +9,7 @@ const WeatherCard: React.FC<{ value: Value }> = ({ value }) => {
   return (
     <div className="weather-card">
       <p className="weather-description">
-        Current weather: {value?.weather[0]?.main}
+        Current location weather: {value?.weather[0]?.main}
         {", "}
         {value?.weather[0]?.description}</p>
       <p className="temperature">Temperature: {value?.main?.temp} °C</p>

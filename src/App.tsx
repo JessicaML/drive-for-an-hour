@@ -134,20 +134,20 @@ export default function App() {
   console.log('Render:', { coordinate }, { result })
 
   return (
-    <div className="App" data-testid="container"><h1>Drive for an hour</h1>
+    <div className="App" data-testid="container"><h1>Better Weather Seeker</h1>
     <p>Where can I drive for an hour and get better weather conditions?</p>
+            <WarmDestinationsCard
+          destinations={warmDestinations}
+          loading={loadingDestinations}
+        />
       {shouldDisplayWeather ? (<>
-        <LocationCard coordinate={coordinate} />
         <MapComponent coordinate={coordinate} willRainSoon={willRainSoon} />
       {result?.map((value) => {
           return (
             <WeatherCard value={value} key={value.id} />
           );
         })}
-        <WarmDestinationsCard
-          destinations={warmDestinations}
-          loading={loadingDestinations}
-        />
+
       </>) : <p>Checking the weather in your location, hang on....</p>}
     </div>
   );

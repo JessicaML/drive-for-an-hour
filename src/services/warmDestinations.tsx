@@ -70,6 +70,7 @@ export const findWarmestDestinations = async (
     .filter(item => item.weather !== null)
     .map(item => {
       const weather = item.weather!;
+      console.log('item:', item);
       return {
         lat: item.location.lat,
         long: item.location.long,
@@ -78,7 +79,8 @@ export const findWarmestDestinations = async (
         drivingTimeMinutes: item.location.drivingTimeMinutes,
         drivingDistanceMiles: item.location.drivingDistanceMiles,
         weatherDescription: weather.weather[0].description,
-        weatherMain: weather.weather[0].main
+        weatherMain: weather.weather[0].main,
+        locationName: weather.name
       };
     })
     // Only include locations that are warmer

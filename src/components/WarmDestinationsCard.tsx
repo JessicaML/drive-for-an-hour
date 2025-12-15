@@ -27,7 +27,7 @@ const WarmDestinationsCard: React.FC<{
       </div>
     );
   }
-
+console.log('Rendering WarmDestinationsCard', destinations);
   return (
     <div className="warm-destinations-card">
       <h2 className="warm-destinations-title">Warmest Destinations Nearby</h2>
@@ -45,7 +45,7 @@ const WarmDestinationsCard: React.FC<{
                 {dest.temperature.toFixed(1)}°C
               </div>
               <div className="destination-weather">
-                {dest.weatherMain} - {dest.weatherDescription}
+                {dest.locationName}: {dest.weatherMain} - {dest.weatherDescription}
               </div>
               <div className="destination-location">
                 📍 {formatLocation(dest.lat)}, {formatLocation(dest.long)}

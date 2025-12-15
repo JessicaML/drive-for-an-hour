@@ -8,6 +8,7 @@ export interface Value {
   main: {
     temp: number
   },
+  name: string,
   weather:
     [
       { description: string;
@@ -46,4 +47,5 @@ export interface WarmDestination {
   drivingDistanceMiles: number;
   weatherDescription: string;
   weatherMain: string;
+  locationName: string;
 }
