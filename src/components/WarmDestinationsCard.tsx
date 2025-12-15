@@ -27,7 +27,6 @@ const WarmDestinationsCard: React.FC<{
       </div>
     );
   }
-console.log('Rendering WarmDestinationsCard', destinations);
   return (
     <div className="warm-destinations-card">
       <h2 className="warm-destinations-title">Warmest Destinations Nearby</h2>

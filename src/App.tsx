@@ -89,7 +89,6 @@ export default function App() {
       try {
         // Generate grid of coordinates (60 mile radius, 15 mile spacing)
         const gridCoordinates = generateGridCoordinates(coordinate, 60, 15);
-        console.log(`Generated ${gridCoordinates.length} grid coordinates to check`);
 
         // Filter to locations within 1 hour drive
         const locationsWithinHour = await getLocationsWithinDrivingTime(
@@ -99,8 +98,6 @@ export default function App() {
           openRouteServiceApiKey
         );
         console.log(`Found ${locationsWithinHour.length} locations within 1 hour drive`);
-                console.log(`locationsWithinHour ${locationsWithinHour}`);
-
 
         // Get current temperature
         const currentTemp = result[0].main.temp;
@@ -113,9 +110,8 @@ export default function App() {
           weatherApiKey,
           5 // Top 5 destinations
         );
-                console.log(`Found ${warmest.length} warmer destinations`);
-
         console.log(`Found ${warmest.length} warmer destinations`);
+
 
         setWarmDestinations(warmest);
       } catch (error) {
@@ -131,7 +127,6 @@ export default function App() {
   // eslint-disable-next-line
   }, [shouldDisplayWeather, result.length]);
 
-  console.log('Render:', { coordinate }, { result })
 
   return (
     <div className="App" data-testid="container"><h1>Better Weather Seeker</h1>
@@ -141,7 +136,11 @@ export default function App() {
           loading={loadingDestinations}
         />
       {shouldDisplayWeather ? (<>
-        <MapComponent coordinate={coordinate} willRainSoon={willRainSoon} />
+        <MapComponent
+          coordinate={coordinate}
+          willRainSoon={willRainSoon}
+          warmDestinations={warmDestinations}
+        />
       {result?.map((value) => {
           return (
             <WeatherCard value={value} key={value.id} />

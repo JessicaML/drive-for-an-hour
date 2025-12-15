@@ -5,7 +5,6 @@ import "../styles.css";
 
 
 const WeatherCard: React.FC<{ value: Value }> = ({ value }) => {
-  console.log('Rendering', value)
   return (
     <div className="weather-card">
       <p className="weather-description">
