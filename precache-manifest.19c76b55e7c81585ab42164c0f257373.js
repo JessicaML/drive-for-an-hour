@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6dc073acb1d409daf5cc0f1d2df55b4e",
+    "revision": "6d8cd86b1f919051b229221414555497",
     "url": "/drive-for-an-hour/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/drive-for-an-hour/static/css/2.cee453c7.chunk.css"
   },
   {
-    "revision": "25bf04435fdd30d3cf8c",
+    "revision": "f53608ed8093e07442cb",
     "url": "/drive-for-an-hour/static/css/main.4f25784b.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/drive-for-an-hour/static/js/2.f236ff7e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "25bf04435fdd30d3cf8c",
-    "url": "/drive-for-an-hour/static/js/main.3a2431f2.chunk.js"
+    "revision": "f53608ed8093e07442cb",
+    "url": "/drive-for-an-hour/static/js/main.7100f311.chunk.js"
   },
   {
     "revision": "edb0ae596097cd4ca465",

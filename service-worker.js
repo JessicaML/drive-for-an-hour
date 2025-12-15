@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/drive-for-an-hour/precache-manifest.5480c1501ebab03d24694482613120c0.js"
+  "/drive-for-an-hour/precache-manifest.19c76b55e7c81585ab42164c0f257373.js"
 );
 
 self.addEventListener('message', (event) => {
