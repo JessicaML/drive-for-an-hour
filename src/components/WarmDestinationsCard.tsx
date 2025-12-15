@@ -48,7 +48,7 @@ const WarmDestinationsCard: React.FC<{
                 {dest.weatherMain} - {dest.weatherDescription}
               </div>
               <div className="destination-location">
-                📍 {formatLocation({ lat: dest.lat, long: dest.long })}
+                📍 {formatLocation(dest.lat)}, {formatLocation(dest.long)}
               </div>
               <div className="destination-drive-info">
                 <span className="drive-time">🚗 {dest.drivingTimeMinutes} min</span>
