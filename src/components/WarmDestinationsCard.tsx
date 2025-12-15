@@ -1,6 +1,6 @@
 import * as React from "react";
 import { WarmDestination } from '../types';
-import { formatLocation } from '../helpers/formatLocation';
+import formatLocation from '../helpers/formatLocation';
 import "../styles.css";
 
 const WarmDestinationsCard: React.FC<{
