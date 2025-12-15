@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/drive-for-an-hour/static/css/main.2afaaec9.css",
-    "main.js": "/drive-for-an-hour/static/js/main.845a828d.js",
+    "main.css": "/drive-for-an-hour/static/css/main.bef7d5fc.css",
+    "main.js": "/drive-for-an-hour/static/js/main.9020674e.js",
     "index.html": "/drive-for-an-hour/index.html",
-    "main.2afaaec9.css.map": "/drive-for-an-hour/static/css/main.2afaaec9.css.map",
-    "main.845a828d.js.map": "/drive-for-an-hour/static/js/main.845a828d.js.map"
+    "main.bef7d5fc.css.map": "/drive-for-an-hour/static/css/main.bef7d5fc.css.map",
+    "main.9020674e.js.map": "/drive-for-an-hour/static/js/main.9020674e.js.map"
   },
   "entrypoints": [
-    "static/css/main.2afaaec9.css",
-    "static/js/main.845a828d.js"
+    "static/css/main.bef7d5fc.css",
+    "static/js/main.9020674e.js"
   ]
 }
